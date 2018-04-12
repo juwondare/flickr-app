@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Flickr Viewer</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.twbsPagination.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top" style="padding-top: 0px; padding-bottom: 0px;">
+		<a class="navbar-brand" href="#" id="appName">Flickr Viewer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		    	<label for="sel1" style="color: whitesmoke;">Amount to display: </label>
+				  <select class="form-control" id="sel1" style="margin-left: 10px;">
+				  	<option value="8" selected>8</option>
+				    <option value="12">12</option>
+				    <option value="16">16</option>
+				    <option value="20">20</option>
+				    <option value="24">24</option>
+				    <option value="28">28</option>
+				    <option value="32">32</option>
+				</select>
+		    </form>
+		</div>
+	</nav>
+
+    <!-- Container Section -->
+    <div class="container" style="">
+      <h1 class="my-4 text-center text-lg-center" id="appdashboard" style="margin-top: -1em; margin-bottom: -2em;"> </h1>
+      <div class="row text-center text-lg-left border border-white" id="flickr">
+      </div>
+    </div>
+    <nav aria-label="Page navigation example" style="margin-top: 10px;">
+	  	<ul class="pagination justify-content-center"> </ul>
+	</nav>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-md" role="document" style="min-width: 535px;">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="currentImage"></h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body" id="imgbody">
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script>
+		var data = "api/apiData.js";
+		var url  = "api/flickrDataFetch.js";
+		$.getScript(data);
+		$.getScript(url);
+	</script>
+</body>
+</html>
